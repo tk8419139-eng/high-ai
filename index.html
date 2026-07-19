@@ -3,82 +3,44 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>High AI</title>
+<title>Escape Protocol: Black Manor</title>
 
-<style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial,sans-serif;
-}
-
-body{
-background:#000;
-color:#fff;
-text-align:center;
-}
-
-.hero{
-padding:70px 20px;
-}
-
-img{
-width:160px;
-height:160px;
-border-radius:50%;
-border:4px solid red;
-object-fit:cover;
-margin-bottom:20px;
-}
-
-h1{
-font-size:42px;
-margin-bottom:10px;
-}
-
-p{
-color:#ccc;
-margin-bottom:30px;
-}
-
-.btn{
-display:inline-block;
-padding:15px 35px;
-background:red;
-color:white;
-text-decoration:none;
-border-radius:30px;
-font-size:20px;
-}
-
-footer{
-margin-top:80px;
-color:#777;
-font-size:14px;
-}
-</style>
-
+<link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<div class="hero">
+<div id="loading">
 
-<img src="profile.jpg">
+<h1>ESCAPE PROTOCOL</h1>
 
-<h1>HIGH AI</h1>
+<p>BLACK MANOR</p>
 
-<p>Official Website of High AI YouTube Channel</p>
-
-<a class="btn" href="https://youtube.com/@YOURCHANNEL" target="_blank">
-Subscribe on YouTube
-</a>
-
-<footer>
-© 2026 High AI
-</footer>
+<div class="loader"></div>
 
 </div>
+
+<div id="menu">
+
+<h1>ESCAPE PROTOCOL</h1>
+
+<h2>BLACK MANOR</h2>
+
+<button id="play">PLAY</button>
+
+<button id="settings">SETTINGS</button>
+
+<button id="exit">EXIT</button>
+
+</div>
+
+<div id="game">
+
+<canvas id="gameCanvas"></canvas>
+
+</div>
+
+<scrip <script src="game.js"></script>
 
 </body>
 </html>
