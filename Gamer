@@ -1,0 +1,53 @@
+// ==========================
+// PART 6
+
+const monster = {
+    x: 700,
+    y: 350,
+    size: 40,
+    speed: 1.6,
+    color: "#cc0000"
+};
+
+function updateMonster() {
+
+    let dx = player.x - monster.x;
+    let dy = player.y - monster.y;
+
+    let distance = Math.sqrt(dx * dx + dy * dy);
+
+    if (distance > 1) {
+        monster.x += (dx / distance) * monster.speed;
+        monster.y += (dy / distance) * monster.speed;
+    }
+
+    // Attack
+    if (
+        player.x < monster.x + monster.size &&
+        player.x + player.size > monster.x &&
+        player.y < monster.y + monster.size &&
+        player.y + player.size > monster.y
+    ) {
+
+        health -= 0.2;
+
+        if (health <= 0) {
+            health = 0;
+            alert("💀 GAME OVER\nThe Warden caught Jimmy!");
+            location.reload();
+        }
+    }
+}
+
+function drawMonster() {
+
+    ctx.fillStyle = monster.color;
+
+    ctx.beginPath();
+    ctx.arc(monster.x, monster.y, monster.size / 2, 0, Math.PI * 2);
+    ctx.fill();
+
+    ctx.fillStyle = "white";
+    ctx.font = "16px Arial";
+    ctx.fillText("The Warden", monster.x - 25, monster.y - 25);
+}
