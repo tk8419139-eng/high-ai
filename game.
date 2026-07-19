@@ -1,0 +1,70 @@
+// ==========================
+// PART 5
+
+// Inventory
+let inventory = [];
+
+// First Key
+const key = {
+    x: 500,
+    y: 250,
+    size: 20,
+    collected: false
+};
+
+// Exit Door
+const door = {
+    x: 850,
+    y: 180,
+    width: 50,
+    height: 90,
+    locked: true
+};
+
+function checkItems() {
+
+    // Pick up key
+    if (!key.collected &&
+        player.x < key.x + key.size &&
+        player.x + player.size > key.x &&
+        player.y < key.y + key.size &&
+        player.y + player.size > key.y) {
+
+        key.collected = true;
+        inventory.push("Golden Key");
+        alert("🔑 Golden Key Collected!");
+    }
+
+    // Open Door
+    if (door.locked &&
+        inventory.includes("Golden Key") &&
+        player.x < door.x + door.width &&
+        player.x + player.size > door.x &&
+        player.y < door.y + door.height &&
+        player.y + player.size > door.y) {
+
+        door.locked = false;
+        alert("🚪 Door Unlocked!");
+    }
+
+}
+
+function drawItems() {
+
+    // Draw Key
+    if (!key.collected) {
+        ctx.fillStyle = "gold";
+        ctx.beginPath();
+        ctx.arc(key.x, key.y, 10, 0, Math.PI * 2);
+        ctx.fill();
+    }
+
+    // Draw Door
+    ctx.fillStyle = door.locked ? "#8B4513" : "#00aa00";
+    ctx.fillRect(door.x, door.y, door.width, door.height);
+
+    // Inventory Text
+    ctx.fillStyle = "white";
+    ctx.font = "18px Arial";
+    ctx.fillText("Inventory: " + inventory.join(", "), 20, 110);
+}
