@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Shadow Heist</title>
+<style>
+body{
+  margin:0;
+  background:#111;
+  overflow:hidden;
+}
+#player{
+  width:40px;
+  height:40px;
+  background:#00ff66;
+  position:absolute;
+  left:50px;
+  top:50px;
+}
+#diamond{
+  width:30px;
+  height:30px;
+  background:cyan;
+  position:absolute;
+  right:50px;
+  bottom:50px;
+}
+</style>
+</head>
+<body>
+
+<div id="player"></div>
+<div id="diamond"></div>
+
+<script>
+const player = document.getElementById("player");
+let x = 50, y = 50;
+
+document.addEventListener("keydown", e=>{
+  if(e.key==="ArrowRight") x+=10;
+  if(e.key==="ArrowLeft") x-=10;
+  if(e.key==="ArrowUp") y-=10;
+  if(e.key==="ArrowDown") y+=10;
+
+  player.style.left=x+"px";
+  player.style.top=y+"px";
+});
+</script>
+
+</body>
+</html>
