@@ -1,0 +1,95 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,Helvetica,sans-serif;
+}
+
+body{
+background:#000;
+overflow:hidden;
+color:#fff;
+}
+
+#loading{
+position:fixed;
+width:100%;
+height:100%;
+background:#050505;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+z-index:999;
+}
+
+.loader{
+width:70px;
+height:70px;
+border:6px solid #333;
+border-top:6px solid #00ff99;
+border-radius:50%;
+animation:spin 1s linear infinite;
+margin-top:20px;
+}
+
+@keyframes spin{
+0%{transform:rotate(0deg);}
+100%{transform:rotate(360deg);}
+}
+
+#menu{
+display:none;
+position:absolute;
+width:100%;
+height:100%;
+background:linear-gradient(#050505,#151515);
+justify-content:center;
+align-items:center;
+flex-direction:column;
+}
+
+#menu h1{
+font-size:48px;
+color:#00ff99;
+margin-bottom:10px;
+text-shadow:0 0 20px #00ff99;
+}
+
+#menu h2{
+margin-bottom:40px;
+color:white;
+font-weight:normal;
+}
+
+button{
+width:220px;
+padding:16px;
+margin:10px;
+border:none;
+border-radius:12px;
+font-size:20px;
+cursor:pointer;
+background:#00ff99;
+color:#000;
+font-weight:bold;
+transition:.3s;
+}
+
+button:hover{
+transform:scale(1.05);
+background:#00cc77;
+}
+
+#game{
+display:none;
+width:100vw;
+height:100vh;
+background:#111;
+}
+
+#gameCanvas{
+width:100%;
+height:100%;
+display:block;
+  }
